@@ -50,16 +50,70 @@
             margin-top: 160px; /* Espaço para o cabeçalho fixo */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            height: 100px;
+            height: 150px;
             display: flex;
             justify-content: center; /* Centraliza horizontalmente */
-            margin-top: 10px;
+            align-items: center; /* Centraliza verticalmente */
+            margin-top: 4px;
+            flex-direction: column; /* Para organizar os elementos em coluna */
         }
 
         #container img {
-            max-width: 150px; /* Ajusta o tamanho da logo */
-            max-height: 150px; /* Mantém a proporção */
-            top: 0;
+            max-width: 120px; /* Ajusta o tamanho da logo */
+            max-height: 120px; /* Mantém a proporção */
+            margin-bottom: 0px; /* Espaço entre a imagem e as palavras */
+        }
+
+        #palavras {
+            display: flex;
+            margin-top: 0px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
+        }
+
+        #palavras a {
+            margin: 0 5px; /* Espaço entre as palavras */
+            color: black; /* Cor do texto */
+            text-decoration: none; /* Remove o sublinhado */
+            font-weight: bold;
+            padding-right: 20px;
+            
+        }
+
+        #palavras a:hover {
+            color: orange; /* Cor do texto ao passar o mouse */
+        }
+
+        #carrossel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        #carrossel img {
+            width: 100%;
+            display: none;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
         }
     </style>
 </head>
@@ -72,11 +126,55 @@
 
     <div id="container">
         <img src="logo.png" alt="">
+        <div id="palavras"> 
+            <a href="#">NOVIDADES</a>
+            <a href="#">ADIDAS</a>
+            <a href="#">PUMA</a>
+            <a href="#">NIKE</a>
+        </div>
     </div>
 
+    <div id="carrossel">
+        <img class="slide" src="airMax.png" alt="Imagem 1">
+        <img class="slide" src="imagem2.jpg" alt="Imagem 2">
+        <img class="slide" src="imagem3.jpg" alt="Imagem 3">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+
     <script>
-       
+        var slideIndex = 1;
+    
+        // Função para avançar ou retroceder os slides
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        // Função para mostrar os slides
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slide");
+    
+            // Volta ao primeiro slide se chegar ao último
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+    
+            // Esconde todos os slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+    
+            // Mostra o slide atual
+            slides[slideIndex - 1].style.display = "block";
+        }
+    
+        // Mostra o primeiro slide ao carregar a página
+        showSlides(slideIndex);
     </script>
 </body>
 </html>
-
