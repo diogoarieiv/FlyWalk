@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gear Up</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #cabecalho {
+            background-color: #dad5d5;
+            text-align: left;
+            padding: 10px;
+            display: flex; /* Para alinhar o ícone de lupa à direita */
+            align-items: center; /* Para centralizar verticalmente o ícone de lupa */
+            overflow: hidden; /* Para evitar que o conteúdo ultrapasse os limites do cabeçalho */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 20px;
+        }
+
+        .custom-link {
+            text-decoration: none; /* Remove o sublinhado */
+            color: rgb(0, 0, 0); /* Define a cor do texto */
+            font-size: small;
+            display: inline-block; 
+            vertical-align: middle; 
+            line-height: normal;
+            padding-right: 20px;
+        }
+
+        .apresentacao {
+            text-align: center;
+            color: #7c6f6f;
+            font-size: 15px;
+            
+        }
+
+        #container {
+            background-color: #ffffff; /* Diferente do cabeçalho para criar contraste */
+            text-align: left;
+            padding: 10px;
+            margin-top: 160px; /* Espaço para o cabeçalho fixo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            margin-top: 10px;
+        }
+
+        #container img {
+            max-width: 150px; /* Ajusta o tamanho da logo */
+            max-height: 150px; /* Mantém a proporção */
+            top: 0;
+        }
+    </style>
+</head>
+<body> 
+    <div id="cabecalho">
+        <a href="" class="custom-link"> Acessibilidade</a>
+        <a href="" class="custom-link"> FAQ</a>
+        <p class="apresentacao"> FlyWalk: a sua loja de tênis esportivos </p>
+    </div>
+
+    <div id="container">
+        <img src="logo.png" alt="">
+    </div>
+
+    <script>
+       
+    </script>
+</body>
+</html>
 
