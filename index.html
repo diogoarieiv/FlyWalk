@@ -8,6 +8,10 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(#130a05, #130a05)
         }
 
         #cabecalho {
@@ -19,7 +23,7 @@
             overflow: hidden; /* Para evitar que o conteúdo ultrapasse os limites do cabeçalho */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            position: fixed;
+            /*position: fixed;*/
             top: 0;
             left: 0;
             z-index: 1000;
@@ -47,10 +51,10 @@
             background-color: #ffffff; /* Diferente do cabeçalho para criar contraste */
             text-align: left;
             padding: 10px;
-            margin-top: 160px; /* Espaço para o cabeçalho fixo */
+            margin-top: 140px; /* Espaço para o cabeçalho fixo */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            height: 150px;
+            height: 125px;
             display: flex;
             justify-content: center; /* Centraliza horizontalmente */
             align-items: center; /* Centraliza verticalmente */
@@ -61,7 +65,8 @@
         #container img {
             max-width: 120px; /* Ajusta o tamanho da logo */
             max-height: 120px; /* Mantém a proporção */
-            margin-bottom: 0px; /* Espaço entre a imagem e as palavras */
+            margin-bottom: none; /* Espaço entre a imagem e as palavras */
+            
         }
 
         #division {
@@ -107,6 +112,11 @@
             display: flex;
             margin-top: 0px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 40px
+            
+            
+            
+            
             
         }
 
@@ -115,7 +125,7 @@
             color: black; /* Cor do texto */
             text-decoration: none; /* Remove o sublinhado */
             font-weight: bold;
-            padding-right: 20px;
+            padding-right: 20px;   
             
         }
 
@@ -154,6 +164,46 @@
         .next {
             right: 0;
         }
+
+        #searchBox {
+            position: absolute;
+            background-color: #130a05;
+            height: 20px;
+            padding: 5px;
+            border-radius: 40px;
+            top: 14%;
+            left: 82%;
+            display: flex;
+            justify-content: space-between; /*alinhamento horizontal*/
+        }
+
+        
+
+        .searchTxt {
+            border: none;
+            background: none;
+            outline: none;
+            padding: 0;
+            color: white;
+            font-size: 13px;
+            line-height: 40px;
+            
+        }
+
+        .searchBox:hover .searchTxt {
+            width: 100px;
+    }
+
+        .searchButton {
+            width: 23px;
+            height: 43px;
+            border-radius: 50%;
+            display: flex; /*alinhar os intens*/ 
+            justify-content: center;
+            
+        }
+
+
     </style>
 </head>
 <body> 
@@ -164,6 +214,16 @@
     </div>
 
     <div id="container">
+        <div id="searchBox">
+            <input type="text" class="searchTxt" placeholder="Pesquisar...">
+            <a href="#" class="searchButton">
+                <img src="lupa1.svg" alt="lupa" height="20px" width="20px">
+
+            </a>
+
+        
+        </div>
+
         <img src="logo.png" alt="">
         <div id="palavras"> 
             <a href="#">NOVIDADES</a>
@@ -229,6 +289,10 @@
     
         // Mostra o primeiro slide ao carregar a página
         showSlides(slideIndex);
+
+
+       
+
     </script>
 </body>
 </html>
