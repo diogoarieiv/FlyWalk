@@ -105,7 +105,46 @@
             width: 100%;
             height: 500px;
             
+            
+            
         }
+
+        #product-section {
+            display: flex;
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            align-items: center; /* Centraliza os itens verticalmente */
+            height: 100%; /* Define a altura da div para ocupar toda a altura */
+        }
+
+        .product {
+            margin: 10px;
+            position: relative; /* Para posicionar o nome do produto */
+        }
+
+        .product-image {
+            width: 180px;
+            height: auto;
+            transition: transform 0.3s ease; /* Efeito de transição suave */
+        }
+
+        .product-name {
+            position: absolute;
+            bottom: -20px; /* Posiciona o nome do produto abaixo da imagem */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%);
+            opacity: 0; /* Inicialmente invisível */
+        transition: opacity 0.3s ease; /* Efeito de transição suave */
+        }
+
+        .product:hover .product-image {
+            transform: scale(1.1); /* Aumenta o tamanho da imagem ao passar o mouse */
+        }
+
+        .product:hover .product-name {
+            opacity: 1; /* Torna o nome do produto visível ao passar o mouse */
+        }
+
+
         
 
         #palavras {
@@ -253,7 +292,21 @@
         
 
     <div id="finalPage">
-
+        <div id="product-section">
+            <div class="product">
+                <img class="product-image" src="tenis.avif" alt="Tênis 1">
+                <p class="product-name">Tênis 1</p>
+            </div>
+            <div class="product">
+                <img class="product-image" src="tenis.avif" alt="Tênis 2">
+                <p class="product-name">Tênis 2</p>
+            </div>
+            <div class="product">
+                <img class="product-image" src="tenis.avif" alt="Tênis 3">
+                <p class="product-name">Tênis 3</p>
+            </div>
+            <!-- Adicione mais produtos conforme necessário -->
+        </div>
     </div>
 
 
