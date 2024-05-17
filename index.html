@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLYWALK</title>
     <style>
+        /* Estilos CSS */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            margin: 0;
             height: 100vh;
             width: 100vw;
-            background: linear-gradient(#130a05, #130a05)
+            background: linear-gradient(#130a05, #130a05);
         }
 
         #cabecalho {
             background-color: #dad5d5;
             text-align: left;
             padding: 10px;
-            display: flex; /* Para alinhar o ícone de lupa à direita */
-            align-items: center; /* Para centralizar verticalmente o ícone de lupa */
-            overflow: hidden; /* Para evitar que o conteúdo ultrapasse os limites do cabeçalho */
+            display: flex; /* Alinha os itens horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            overflow: hidden; /* Evita que o conteúdo ultrapasse */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
-            /*position: fixed;*/
             top: 0;
             left: 0;
             z-index: 1000;
@@ -31,8 +30,8 @@
         }
 
         .custom-link {
-            text-decoration: none; /* Remove o sublinhado */
-            color: rgb(0, 0, 0); /* Define a cor do texto */
+            text-decoration: none; /* Remove sublinhado */
+            color: rgb(0, 0, 0); /* Cor do texto */
             font-size: small;
             display: inline-block; 
             vertical-align: middle; 
@@ -44,14 +43,13 @@
             text-align: center;
             color: #7c6f6f;
             font-size: 15px;
-            
         }
 
         #container {
-            background-color: #ffffff; /* Diferente do cabeçalho para criar contraste */
+            background-color: #ffffff; /* Contraste */
             text-align: left;
             padding: 10px;
-            margin-top: 140px; /* Espaço para o cabeçalho fixo */
+            margin-top: 140px; /* Espaço para cabeçalho fixo */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
             height: 125px;
@@ -59,14 +57,13 @@
             justify-content: center; /* Centraliza horizontalmente */
             align-items: center; /* Centraliza verticalmente */
             margin-top: 4px;
-            flex-direction: column; /* Para organizar os elementos em coluna */
+            flex-direction: column; /* Organiza em coluna */
         }
 
         #container img {
-            max-width: 120px; /* Ajusta o tamanho da logo */
-            max-height: 120px; /* Mantém a proporção */
-            margin-bottom: none; /* Espaço entre a imagem e as palavras */
-            
+            max-width: 120px; /* Tamanho da logo */
+            max-height: 120px; /* Mantém proporção */
+            margin-bottom: none; /* Espaço entre imagem e palavras */
         }
 
         #division {
@@ -78,7 +75,7 @@
             display: flex;
             justify-content: center; /* Centraliza horizontalmente */
             align-items: center; /* Centraliza verticalmente */
-            flex-direction: column; /* Para organizar os elementos em coluna */
+            flex-direction: column; /* Organiza em coluna */
         }
 
         .sale {
@@ -90,86 +87,101 @@
         #sale a {
             margin: 0 5px; /* Espaço entre as palavras */
             color: rgb(255, 255, 255); /* Cor do texto */
-            text-decoration: none; /* Remove o sublinhado */
+            text-decoration: none; /* Remove sublinhado */
             font-weight: bold;
             padding-right: 20px;
-            
         }
 
         #sale a:hover {
-            color: rgb(75, 59, 29); /* Cor do texto ao passar o mouse */
+            color: rgb(75, 59, 29); /* Cor ao passar o mouse */
         }
 
         #finalPage {
             background-color: rgb(31, 29, 29);
             width: 100%;
             height: 500px;
-            
-            
-            
         }
 
         #product-section {
             display: flex;
-            justify-content: center; /* Centraliza os itens horizontalmente */
-            align-items: center; /* Centraliza os itens verticalmente */
-            height: 100%; /* Define a altura da div para ocupar toda a altura */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100%; /* Ocupa altura total */
+            position: relative; /* Posicionamento */
+            overflow: hidden; /* Esconde imagens extras */
+        }
+
+        .product-container {
+            display: flex;
+            transition: transform 0.3s ease; /* Efeito de transição */
         }
 
         .product {
             margin: 10px;
-            position: relative; /* Para posicionar o nome do produto */
+            position: relative; /* Posiciona o nome */
         }
 
         .product-image {
             width: 180px;
             height: auto;
-            transition: transform 0.3s ease; /* Efeito de transição suave */
+            transition: transform 0.3s ease; /* Efeito de transição */
         }
 
         .product-name {
             position: absolute;
-            bottom: -20px; /* Posiciona o nome do produto abaixo da imagem */
+            bottom: -20px; /* Posiciona abaixo da imagem */
             left: 50%; /* Centraliza horizontalmente */
             transform: translateX(-50%);
             opacity: 0; /* Inicialmente invisível */
-        transition: opacity 0.3s ease; /* Efeito de transição suave */
+            transition: opacity 0.3s ease; /* Efeito de transição */
         }
 
         .product:hover .product-image {
-            transform: scale(1.1); /* Aumenta o tamanho da imagem ao passar o mouse */
+            transform: scale(1.1); /* Aumenta ao passar mouse */
         }
 
         .product:hover .product-name {
-            opacity: 1; /* Torna o nome do produto visível ao passar o mouse */
+            opacity: 1; /* Torna visível ao passar mouse */
         }
 
+        .nav-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-        
+        .arrow {
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
 
         #palavras {
             display: flex;
             margin-top: 0px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin-bottom: 40px
-            
-            
-            
-            
-            
+            margin-bottom: 40px;
         }
 
         #palavras a {
-            margin: 0 5px; /* Espaço entre as palavras */
+            margin: 0 5px; /* Espaço entre palavras */
             color: black; /* Cor do texto */
-            text-decoration: none; /* Remove o sublinhado */
+            text-decoration: none; /* Remove sublinhado */
             font-weight: bold;
             padding-right: 20px;   
-            
         }
 
         #palavras a:hover {
-            color: orange; /* Cor do texto ao passar o mouse */
+            color: orange; /* Cor ao passar mouse */
         }
 
         #carrossel {
@@ -213,10 +225,8 @@
             top: 14%;
             left: 82%;
             display: flex;
-            justify-content: space-between; /*alinhamento horizontal*/
+            justify-content: space-between; /* Alinhamento horizontal */
         }
-
-        
 
         .searchTxt {
             border: none;
@@ -226,30 +236,41 @@
             color: white;
             font-size: 13px;
             line-height: 40px;
-            
         }
 
         .searchBox:hover .searchTxt {
             width: 100px;
-    }
+        }
 
         .searchButton {
             width: 23px;
             height: 43px;
             border-radius: 50%;
-            display: flex; /*alinhar os intens*/ 
+            display: flex; /* Alinha itens */
             justify-content: center;
-            
         }
 
-
+        #rodape {
+            background-color: #dad5d5;
+            text-align: left;
+            padding: 10px;
+            display: flex; /* Alinha itens */
+            align-items: center; /* Centraliza verticalmente */
+            overflow: hidden; /* Evita que conteúdo ultrapasse */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: 60px;
+        }
     </style>
 </head>
 <body> 
     <div id="cabecalho">
-        <a href="" class="custom-link"> Acessibilidade</a>
-        <a href="" class="custom-link"> FAQ</a>
-        <p class="apresentacao"> FlyWalk: a sua loja de tênis esportivos </p>
+        <a href="#" class="custom-link">Acessibilidade</a>
+        <a href="#" class="custom-link">FAQ</a>
+        <p class="apresentacao">FlyWalk: a sua loja de tênis esportivos</p>
     </div>
 
     <div id="container">
@@ -257,13 +278,10 @@
             <input type="text" class="searchTxt" placeholder="Pesquisar...">
             <a href="#" class="searchButton">
                 <img src="lupa1.svg" alt="lupa" height="20px" width="20px">
-
             </a>
-
-        
         </div>
 
-        <img src="logo.png" alt="">
+        <img src="logo.png" alt="Logotipo">
         <div id="palavras"> 
             <a href="#">NOVIDADES</a>
             <a href="#">ADIDAS</a>
@@ -290,39 +308,77 @@
         </div>
     </div>
         
-
     <div id="finalPage">
         <div id="product-section">
-            <div class="product">
-                <img class="product-image" src="tenis.avif" alt="Tênis 1">
-                <p class="product-name">Tênis 1</p>
+            <div class="nav-arrows">
+                <div class="arrow prev">&lt;</div>
+                <div class="arrow next">&gt;</div>
             </div>
-            <div class="product">
-                <img class="product-image" src="tenis.avif" alt="Tênis 2">
-                <p class="product-name">Tênis 2</p>
+            <div class="product-container">
+                <div class="product">
+                    <img class="product-image" src="tenis.avif" alt="Tênis 1">
+                    <p class="product-name">Tênis 1</p>
+                </div>
+                <div class="product">
+                    <img class="product-image" src="tenis.avif" alt="Tênis 2">
+                    <p class="product-name">Tênis 2</p>
+                </div>
+                <div class="product">
+                    <img class="product-image" src="tenis.avif" alt="Tênis 3">
+                    <p class="product-name">Tênis 3</p>
+                </div>
+                <div class="product">
+                    <img class="product-image" src="tenis.avif" alt="Tênis 4">
+                    <p class="product-name">Tênis 4</p>
+                </div>
+                <!-- Adicione mais produtos conforme necessário -->
             </div>
-            <div class="product">
-                <img class="product-image" src="tenis.avif" alt="Tênis 3">
-                <p class="product-name">Tênis 3</p>
-            </div>
-            <!-- Adicione mais produtos conforme necessário -->
         </div>
     </div>
 
+    <div id="rodape">
+        <a href="vitor.html" class="custom-link">Vitor Machado Silva</a>
+        <a href="#" class="custom-link">Diogo Vieira</a>
+        <p class="apresentacao">FlyWalk: a sua loja de tênis esportivos</p>
+    </div>
 
     <script>
+        const productContainer = document.querySelector('.product-container');
+        const prevArrow = document.querySelector('.prev');
+        const nextArrow = document.querySelector('.next');
+        let currentIndex = 0;
+
+        prevArrow.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSliderPosition();
+            }
+        });
+
+        nextArrow.addEventListener('click', () => {
+            if (currentIndex < productContainer.children.length - 4) {
+                currentIndex++;
+                updateSliderPosition();
+            }
+        });
+
+        function updateSliderPosition() {
+            const itemWidth = productContainer.children[0].offsetWidth;
+            productContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+
         var slideIndex = 1;
-    
+
         // Função para avançar ou retroceder os slides
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
-    
+
         // Função para mostrar os slides
         function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("slide");
-    
+
             // Volta ao primeiro slide se chegar ao último
             if (n > slides.length) {
                 slideIndex = 1;
@@ -330,22 +386,18 @@
             if (n < 1) {
                 slideIndex = slides.length;
             }
-    
+
             // Esconde todos os slides
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-    
+
             // Mostra o slide atual
             slides[slideIndex - 1].style.display = "block";
         }
-    
+
         // Mostra o primeiro slide ao carregar a página
         showSlides(slideIndex);
-
-
-       
-
     </script>
 </body>
 </html>
